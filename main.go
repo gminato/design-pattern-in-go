@@ -18,8 +18,14 @@ func main() {
 	shoeFactor := abstractfactory.GetSportFactory("Nike")
 	nikeShoe := shoeFactor.MakeShoe()
 	nikeShoe.SetSize(15)
-	fmt.Print(nikeShoe.GetSize())
+	fmt.Println(nikeShoe.GetSize())
 
+	adidasFactory := abstractfactory.GetSportFactory("Adidas")
+	AdidasShoe := adidasFactory.MakeShoe()
+	fmt.Print(AdidasShoe.GetSize())
+	nikeShirt := shoeFactor.MakeShirt()
+	fmt.Println(nikeShirt.GetType())
+	fmt.Println(adidasFactory.MakeShirt().GetType())
 }
 func printDetails(g factory.IGun) {
 	fmt.Printf("Gun: %s", g.GetName())

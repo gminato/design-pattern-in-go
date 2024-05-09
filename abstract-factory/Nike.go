@@ -10,3 +10,11 @@ func (n *Nike) MakeShoe() IShoe {
 		},
 	}
 }
+
+func (n *Nike) MakeShirt() Ishirt {
+	return &NikeShirt{
+		Shirt: Shirt{
+			shirtType: "Tshirt",
+		},
+	}
+}
