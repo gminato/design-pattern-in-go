@@ -6,6 +6,7 @@ import (
 	"gminato/design-pattern-in-go/builder"
 	builderpattern "gminato/design-pattern-in-go/builder-pattern"
 	"gminato/design-pattern-in-go/factory"
+	"gminato/design-pattern-in-go/observer-pattern"
 )
 
 func main() {
@@ -60,6 +61,15 @@ func main() {
 		GetComputer()
 	fmt.Printf("%+v", pc)
 
+	//observer pattern
+
+	cust1 := &observer.Customer{Id: "aaa@b.com"}
+	cust2 := &observer.Customer{Id: "b@aa.com"}
+
+	shirtItem := observer.NewItem("Nike")
+	shirtItem.Register(cust1)
+	shirtItem.Register(cust2)
+	shirtItem.UpdateAvailibilty()
 }
 func printDetails(g factory.IGun) {
 	fmt.Printf("Gun: %s", g.GetName())
